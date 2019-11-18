@@ -1,6 +1,7 @@
-for(var i = 0; i < document.body.childNodes.length; i++) {
+/* for(var i = 0; i < document.body.childNodes.length; i++) {
 	console.log(document.body.childNodes[i]); 
 }
+*/
 // f.1
 /*
 var footer = document.querySelector('footer');
@@ -119,6 +120,48 @@ la card d'une liste d'éléments HTML non?) pour appliquer un addEventListener �
 mets bien le compteur de ta boucle en "let", sinon tu vas avoir des surprises… => clique ici pour accéder à une ressource qui parle de ça
 */
 // f.6
+let btnView = document.querySelectorAll(".btn.btn-sm.btn-success");
+for (let i = 0; i < btnView.length; i++) {
+	console.log(btnView);
+	let cardImgs = document.querySelectorAll(".card-img-top")[i];
+	console.log(cardImgs);
+	let cardTexts = document.querySelectorAll("p.card-text")[i];
+	console.log(cardTexts);
+	t = true;
+
+btnView[i].addEventListener("mouseover", function () {
+	if (t === true) {
+		cardTexts.style.display = "none";
+		cardImgs.style.width = "20%";
+		t = false;
+	}
+	else if (t === false) {
+		cardTexts.style.display = "block";
+		cardImgs.style.width = "100%";
+		t = true;
+	}
+});
+
+}
+/* Allez on va rajouter un peu de WTF dans la page : si un utilisateur clique sur le bouton gris ==>,
+ la dernière card (en bas à droite) va passer en premier (en haut à gauche). On va pouvoir faire tourner les cards !
+
+Indice : Cette fonctionnalité n'est pas ultra complexe en fait : 
+il faut pointer sur le noeud-parent des 6 cards puis déplacer la card n°6 en premier avec un insertBefore.*/
+// f.7
+let btnR = document.getElementsByClassName('btn btn-secondary my-2')[0];
+console.log(btnR);
+
+btnR.addEventListener("click", function () {
+	let card = document.getElementsByClassName("card");
+	lastCard = card[5].parentNode;
+	firstCard = card[0].parentNode;
+
+	parent = lastCard.parentNode;
+
+	parent.insertBefore(lastCard,firstCard);
+});
+// f.8 
 
 
 
