@@ -162,11 +162,20 @@ btnR.addEventListener("click", function () {
 	parent.insertBefore(lastCard,firstCard);
 });
 // f.8 
+let btnL = document.getElementsByClassName('btn btn-primary my-2')[0];
 
+btnL.addEventListener("click", function (event) {
+	event.preventDefault(); // desactiver le link 
+	let card = document.getElementsByClassName("card");
+	firstCard = card[0].parentNode;
+	lastCard = card[5].parentNode;
 
+	parent = lastCard.parentNode;
 
+	parent.insertBefore(firstCard, lastCard);
 
-
+	 
+});
 
 
 
