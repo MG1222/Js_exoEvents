@@ -1,7 +1,7 @@
-/* for(var i = 0; i < document.body.childNodes.length; i++) {
+for(var i = 0; i < document.body.childNodes.length; i++) {
 	console.log(document.body.childNodes[i]); 
 }
-*/
+
 // f.1
 /*
 var footer = document.querySelector('footer');
@@ -177,6 +177,34 @@ btnL.addEventListener("click", function (event) {
 	 
 });
 
+/* La fonctionnalité se déclenchera si le logo de la page (JS & Events) est sélectionné et
+ qu'on appuie sur une touche spécifique du clavier.
+Si l'utilisateur presse la touche "a", 
+l'ensemble de la page va être condensé sur 4 colonnes Bootstrap à gauche de l'écran.
+Si l'utilisateur presse la touche "y", 
+l'ensemble de la page va être condensé sur 4 colonnes Bootstrap au milieu de l'écran.
+Si l'utilisateur presse la touche "p", 
+l'ensemble de la page va être condensé sur 4 colonnes Bootstrap à droite de l'écran.
+Si l'utilisateur presse la touche "b", 
+tout redevient normal.
+Indice 1 : L'event à utiliser est "keypress", appliqué au texte "JS & Events" (ou, mieux, à une div le contenant).
+
+Indice 2 : Pour modifier le rendu visuel de toute la page, il faut que tu joues avec les classes de <body>.
+
+Indice 3 : Pour mettre tout sur 4 colonnes, rajoute la classe col-4. Pour les placer au milieu ou à droite,
+ rajoute la classe offset-md-4 ou offset-md-8.
+
+Indice 4 : Pour éviter que les classes s'accumulent, et pour que chaque touche ait un comportement propre, 
+retire toutes les classes du <body> à chaque fois qu'un "keypress" est détecté. Ensuite seulement tu rajoutes les classes nécessaires.*/
+// f.9
+// https://developer.mozilla.org/fr/docs/Web/API/Element/keypress_event
+let emlLogo = document.getElementsByTagName("strong")[0];
+console.log(emlLogo);
+let body = document.querySelector("body");
+console.log(body);
+emlLogo.addEventListener("keypress", function (){
+	
+});
 
 
 
